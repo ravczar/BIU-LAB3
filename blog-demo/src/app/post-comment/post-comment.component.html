@@ -1,6 +1,16 @@
-<p> Input Coment
+<p> Input coment:
     {{comment}} 
 </p>
-<p> Another comment
-    {{comment1.author}} 
-</p>
+
+<!-- Brane dane w oparciu o model-->
+<div class="single-comment">
+  <p> 
+      Author: {{comment1.author}} 
+  </p>
+  <p>
+      Date: {{comment1.date | date:'shortDate'}}
+  </p>
+  <p>
+      Comment: {{comment1.content}}
+  </p>
+</div>

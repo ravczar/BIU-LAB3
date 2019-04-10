@@ -5,9 +5,9 @@
 <span>treść: {{post.content}}</span> 
 
 <h2>Komentarze:</h2> 
-<ul>     
+<ul class="comment-list">     
   <li *ngFor="let comment of post.comments">
    <!--{{comment}} to pobierze pole comment z obecnego obiektu post.comments--> 
-   <post-comment [comment]="comment"></post-comment> 
+   <post-comment [comment]="comment"></post-comment>
   </li> 
 </ul>
