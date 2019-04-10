@@ -1,4 +1,4 @@
-// Model for component
+// Model for component : blog-post
 export class BlogPost {
     constructor (
         public title: string,

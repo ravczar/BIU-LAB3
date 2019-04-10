@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PostComment } from './post-comment';
 
 @Component({
   selector: 'post-comment',
@@ -11,5 +12,13 @@ export class PostCommentComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @Input() comment: string;
+
+  comment1 = new PostComment(
+    "Maćko z Bogdańca",
+    new Date(),
+    "some comment text"
+  );
 
 }

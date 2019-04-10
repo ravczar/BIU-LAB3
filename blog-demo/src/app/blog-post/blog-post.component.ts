@@ -13,6 +13,8 @@ export class BlogPostComponent implements OnInit {
   ngOnInit() {
   }
 
+  isInEditMode = false;
+
   post = new BlogPost(
       "1st Post Title",
       new Date(),
@@ -20,4 +22,7 @@ export class BlogPostComponent implements OnInit {
       ["comment 1", "comment 2"]
     );
 
+    toggleEditMode():void{         
+      this.isInEditMode=!this.isInEditMode;     
+    }
 }
