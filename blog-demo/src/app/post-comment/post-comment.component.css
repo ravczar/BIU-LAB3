@@ -8,6 +8,7 @@ div.single-comment {
     border-color: darkred;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    margin:0 0 1em 0;
 }
 ul.comment-list{
     list-style: none;

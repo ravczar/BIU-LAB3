@@ -1,9 +1,9 @@
-ul.comment-list{
-    list-style: none;
-}
 #comment-wrapper {
     background-color: gray;
 }
 #post-wrapper {
     background-color: green;
+}
+div.comment-list {
+    padding-bottom: 2em;
 }

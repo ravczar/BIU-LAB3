@@ -1,28 +1,30 @@
-<p> Input coment:
-    {{comment}} 
-</p>
-
-<!-- Brane dane w oparciu o model-->
-<div class="single-comment">
-  <p> 
-      Author: {{comment1.author}} 
-  </p>
-  <p>
-      Date: {{comment1.date | date:'shortDate'}}
-  </p>
-  <p>
-      Comment: {{comment1.content}}
-  </p>
+<!-- wyświetla wszystkie komentarze z naszego arraya - > Brane dane w oparciu o model-->
+<ul class="comment-list">
+    <li *ngFor="let comment of commentArray">
+        <div class="single-comment" >
+            <p>Author: {{comment.author}}</p>
+            <p>Date: {{comment.date | date:"medium"}}</p>
+            <p>Comment: {{comment.content}}</p>
+            <button class="btn btn-warning" (click)="editComment()" >Edit comment</button> 
+            <button class="btn btn-danger" (click)="deleteComment()" >Delete comment</button> 
+        </div>
+    </li>
+</ul>
+<div id="comment-form">
+    <button class="btn btn-primary" (click)="toggleAddCommentMode()" >Add new comment</button>
+    <form *ngIf="inAddCommentMode">
+        <h2>Add a comment on above post:</h2>
+        <div class="form-group">
+            <label for="author">Author's name</label>
+            <input name="author" type="text" class="form-control" id="author" [(ngModel)]="author" placeholder="Mirek">
+        </div>
+        <div class="form-group">
+            <label for="comment">Your comment</label>
+            <textarea name="comment"class="form-control" id="comment" [(ngModel)]="authorsComment" placeholder="What a lovely post" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="setNewComment()" >Save comment</button> 
+    </form>
 </div>
-
-<!-- Test wyświetlania z arraylisty komentarzy :-) działa, trzeba sprawdzić jeszcze sposób wyświetlania tego tutaj, raczej przeniesiemy to do Blog-post zamiast tu wyświetlać-->
-<div class="single-comment" >
-        <ul class="comment-list">
-            <li *ngFor="let comment of commentArray">
-                <p>Author: {{comment.author}}</p>
-                <p>Date: {{comment.date | date:"shortDate"}}</p>
-                <p>Comment: {{comment.content}}</p>
-            </li>
-        </ul>
     
-</div>
+
+

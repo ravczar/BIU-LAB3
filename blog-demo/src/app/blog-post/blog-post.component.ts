@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPost } from './blog-post';
+import { PostCommentComponent } from '../post-comment/post-comment.component';
+import { PostComment } from '../post-comment/post-comment';
 
 @Component({
   selector: 'blog-post',
@@ -14,6 +16,10 @@ export class BlogPostComponent implements OnInit {
   }
 
   isInEditMode = false;
+  author:string;
+  comment:string;
+  myPostCommentComponent = new PostCommentComponent();
+
 
   post = new BlogPost(
       "1st Post Title",
@@ -25,4 +31,5 @@ export class BlogPostComponent implements OnInit {
     toggleEditMode():void{         
       this.isInEditMode=!this.isInEditMode;     
     }
+
 }
