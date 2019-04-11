@@ -14,3 +14,15 @@
       Comment: {{comment1.content}}
   </p>
 </div>
+
+<!-- Test wyświetlania z arraylisty komentarzy :-) działa, trzeba sprawdzić jeszcze sposób wyświetlania tego tutaj, raczej przeniesiemy to do Blog-post zamiast tu wyświetlać-->
+<div class="single-comment" >
+        <ul class="comment-list">
+            <li *ngFor="let comment of commentArray">
+                <p>Author: {{comment.author}}</p>
+                <p>Date: {{comment.date | date:"shortDate"}}</p>
+                <p>Comment: {{comment.content}}</p>
+            </li>
+        </ul>
+    
+</div>

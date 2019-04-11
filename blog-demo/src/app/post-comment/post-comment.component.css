@@ -5,7 +5,10 @@ div.single-comment {
     padding: 1em;
     border-width:0.5em;
     border-style:solid;
-    border-color: gray;
+    border-color: darkred;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+}
+ul.comment-list{
+    list-style: none;
 }
