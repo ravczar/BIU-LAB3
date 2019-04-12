@@ -17,6 +17,7 @@ export class PostCommentComponent implements OnInit {
   inAddCommentMode: boolean;
   postId: number = 0;
   isInEditMode: boolean = false;
+  oldContent: string;
 
   commentArray: Array<PostComment> = [];
   
@@ -80,7 +81,18 @@ export class PostCommentComponent implements OnInit {
     this.commentArray.splice(indexOfOurArrayToBeDeleted, 1);
   }
 
-  toggleEditMode():void{         
+  toggleEditMode(arrayItemId:number ):void{  
+    let oldContent = this.commentArray[arrayItemId].content;
+    if(!this.isInEditMode) this.oldContent = oldContent;
     this.isInEditMode=!this.isInEditMode;
+    this.commentArray[arrayItemId].editMode =! this.commentArray[arrayItemId].editMode;
+      if(this.commentArray[arrayItemId].editMode == false){
+        let newContent = this.commentArray[arrayItemId].content;
+        if(newContent !== this.oldContent){
+          this.commentArray[arrayItemId].date = new Date();
+        }
+      }
+    }
+    
   }
-}
+

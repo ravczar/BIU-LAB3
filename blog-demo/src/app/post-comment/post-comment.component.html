@@ -3,11 +3,12 @@
     <li *ngFor="let comment of commentArray">
         <div class="single-comment" >
             <!--<p> Post ID: {{comment.id}}</p>-->
+            <!--<p> Edit mode: {{comment.editMode}}</p>-->
             <p><span>Author:</span> {{comment.author}}</p>
             <p><span>Date:</span> {{comment.date | date:"medium"}}</p>
             <p><span>Comment:</span> {{comment.content}}</p>
-            <input *ngIf="isInEditMode" name="editComment" type="text" class="form-control" id="editComment" [(ngModel)]="comment.content"/>
-            <button type="button" class="btn btn-warning" value="{{comment.id}}" (click)="toggleEditMode()" >Edit comment</button> 
+            <input *ngIf="comment.editMode" name="editComment" type="text" class="form-control" id="editComment" [(ngModel)]="comment.content"/>
+            <button type="button" class="btn btn-warning" value="{{comment.id}}" (click)="toggleEditMode( comment.id )" >Edit comment</button> 
             <button type="button" class="btn btn-danger" value="{{comment.id}}" (click)="deleteComment( comment.id )" >Delete comment</button> 
         </div>
     </li>

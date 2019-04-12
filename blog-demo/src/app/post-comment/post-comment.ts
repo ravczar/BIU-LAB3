@@ -4,8 +4,9 @@ export class PostComment {
         public id: number,
         public author: string,
         public date: Date,
-        public content: string
+        public content: string,
         ){}
+        public editMode: boolean = false
 
     
 }
