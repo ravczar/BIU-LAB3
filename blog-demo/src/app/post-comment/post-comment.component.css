@@ -22,6 +22,9 @@ div.single-comment {
 }
 ul.comment-list{
     list-style: none;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
 }
 textarea:invalid,
 input:invalid {
