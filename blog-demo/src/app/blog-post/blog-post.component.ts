@@ -24,7 +24,7 @@ export class BlogPostComponent implements OnInit {
   post = new BlogPost(
       "1st Post Title",
       new Date(),
-      "post content",
+      "The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe that is centered on a series of superhero films, independently produced by Marvel Studios and based on characters that appear in American comic books published by Marvel Comics.",
       ["comment 1", "comment 2"]
     );
 

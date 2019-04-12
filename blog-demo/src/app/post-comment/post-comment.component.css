@@ -9,7 +9,34 @@ div.single-comment {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     margin:0 0 1em 0;
+    max-width:90%;
+    text-align:left;
+}
+.single-comment p span{
+  color: whitesmoke;
+  font-style: normal;
+}
+
+.single-comment :nth-child(3) {
+  font-style: italic;
 }
 ul.comment-list{
     list-style: none;
 }
+textarea:invalid,
+input:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+textarea:focus:invalid,
+input:focus:invalid {
+    box-shadow: none;
+}
+#comment-form{
+  text-align: center;
+  background-color: darkgrey;
+}
+#comment-form label{
+  float: left;
+}
+
+

@@ -22,30 +22,30 @@ export class PostCommentComponent implements OnInit {
   
   comment1 = new PostComment(
     this.postId++,
-    "Maćko z Bogdańca",
+    "Tonny Starks",
     new Date(),
-    "some comment text"
+    "So what are you doing tonight darling?"
     );
     
   comment2 = new PostComment(
     this.postId++,
-    "Rafał Czarnecki",
+    "Captain America",
     new Date(),
-    "some idiotic comment"
+    "Some pathetic comment concerning todays man manners."
     );
   
   comment3 = new PostComment(
     this.postId++,
-    "Marek Matracki",
+    "Thannos Destroyer",
     new Date(),
-    "ten to sie nie popisal"
+    "I must save the universe!"
     );
 
   comment4 = new PostComment(
     this.postId++,
-    "ROMAN EROTOMAN",
+    "Captain Marvel ",
     new Date(),
-    "kto nie pije ten nie żyje"
+    "Some feminist bullshit about woman!"
     );
 
   ngOnInit() { 
@@ -56,6 +56,15 @@ export class PostCommentComponent implements OnInit {
   }
 
   setNewComment(): void { 
+
+    if (this.author == undefined || this.authorsComment == undefined) alert("Comment not applied -> Check form fields! They must be empty"); 
+    else{
+      if (this.author.length >= 3 && this.authorsComment.length >=5) this.addNewComment();
+      else alert("Comment not applied. Nick or comment too short.Check form fields!"); 
+    }
+  }
+
+  addNewComment(){
     let newComment = new PostComment(this.postId++, this.author, new Date(), this.authorsComment);
     this.commentArray.push(newComment);
     this.toggleAddCommentMode();

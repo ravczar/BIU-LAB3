@@ -1,13 +1,16 @@
 <div id="post-wrapper">
-  <button type="button" class="btn btn-primary" (click)="toggleEditMode()">edytuj</button> 
-  <h1 *ngIf="!isInEditMode">Tytuł: {{post.title}}</h1>
+  <button type="button" class="btn btn-primary" (click)="toggleEditMode()">Edit title</button> 
+  <h1 *ngIf="!isInEditMode">Title: {{post.title}}</h1>
   <input *ngIf="isInEditMode" type="text" [(ngModel)]="post.title"/>
-  <h2>data dodania: {{post.date | date:'shortDate'}}</h2> 
-  <span>treść: {{post.content}}</span> 
+  <h2>Added on: {{post.date | date:'shortDate'}}</h2> 
+  <div class="text-center">
+    <img class="img-fluid rounded" id="picture" src="http://artistviewblog.com/wp-content/uploads/2015/02/Living-In-A-Marvel-World-Artist-View.jpg" alt="Marvel Universe">
+  </div>
+  <span id="description">Description: {{post.content}}</span> 
 </div>
 
 <div id="comment-wrapper">
-    <h2>Komentarze:</h2> 
+    <h2>Reader's comments:</h2> 
     <div class="comment-list">     
       <post-comment [comment]="comment"></post-comment>
     </div>

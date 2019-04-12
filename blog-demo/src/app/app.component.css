@@ -2,3 +2,7 @@
     text-align:center;
     background-color: yellow;
 }
+#app-component-wrapper h3{
+    margin-bottom: 0;
+    padding-bottom: 1em;
+}
