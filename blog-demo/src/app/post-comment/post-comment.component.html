@@ -7,8 +7,8 @@
             <p><span>Date:</span> {{comment.date | date:"medium"}}</p>
             <p><span>Comment:</span> {{comment.content}}</p>
             <input *ngIf="isInEditMode" name="editComment" type="text" class="form-control" id="editComment" [(ngModel)]="comment.content"/>
-            <button type="button" class="btn btn-warning" (click)="toggleEditMode()" >Edit comment</button> 
-            <button type="button" class="btn btn-danger" value="{{comment.id}}"(click)="deleteComment( comment.id )" >Delete comment</button> 
+            <button type="button" class="btn btn-warning" value="{{comment.id}}" (click)="toggleEditMode()" >Edit comment</button> 
+            <button type="button" class="btn btn-danger" value="{{comment.id}}" (click)="deleteComment( comment.id )" >Delete comment</button> 
         </div>
     </li>
 </ul>
@@ -18,8 +18,7 @@
         <h2>Add a comment on above post:</h2>
         <div class="form-group">
             <label for="author">Author's name</label>
-            <input name="author" type="text" class="form-control" id="author" [(ngModel)]="author"  placeholder="Your name" required minlength="3">
-            
+            <input name="author" type="text" class="form-control" id="author" [(ngModel)]="author"  placeholder="Your name" required minlength="3">         
         </div>
         <div class="form-group">
             <label for="comment">Your comment</label>

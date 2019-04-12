@@ -1,8 +1,19 @@
 #app-component-wrapper{
     text-align:center;
-    background-color: yellow;
+    color: YELLOW;
+    background-image: url("http://www.movieviral.com/wp-content/uploads/2012/09/avengers-poster-header.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: auto;
+    padding-top: 150px;
 }
 #app-component-wrapper h3{
     margin-bottom: 0;
     padding-bottom: 1em;
 }
+#title-text{
+    background-color: rgba(1, 1, 1, 0.7);
+}
+
+
