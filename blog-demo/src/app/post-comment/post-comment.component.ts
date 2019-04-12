@@ -16,6 +16,7 @@ export class PostCommentComponent implements OnInit {
   authorsComment: string;
   inAddCommentMode: boolean;
   postId: number = 0;
+  isInEditMode: boolean = false;
 
   commentArray: Array<PostComment> = [];
   
@@ -60,21 +61,17 @@ export class PostCommentComponent implements OnInit {
     this.toggleAddCommentMode();
   }
 
-  setNewCommentFake(){
-    this.commentArray.push(this.comment4);
-  }
-
   toggleAddCommentMode(){
     this.inAddCommentMode=!this.inAddCommentMode; 
-  }
-
-  editComment(){
-
   }
 
   deleteComment(commentId:number){
     let certainPostComment = this.commentArray.find(object => object.id === commentId );
     let indexOfOurArrayToBeDeleted = this.commentArray.indexOf(certainPostComment);
     this.commentArray.splice(indexOfOurArrayToBeDeleted, 1);
+  }
+
+  toggleEditMode():void{         
+    this.isInEditMode=!this.isInEditMode;
   }
 }
