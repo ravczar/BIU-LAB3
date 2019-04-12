@@ -2,11 +2,12 @@
 <ul class="comment-list">
     <li *ngFor="let comment of commentArray">
         <div class="single-comment" >
+            <p> Post ID: {{comment.id}}</p>
             <p>Author: {{comment.author}}</p>
             <p>Date: {{comment.date | date:"medium"}}</p>
             <p>Comment: {{comment.content}}</p>
             <button class="btn btn-warning" (click)="editComment()" >Edit comment</button> 
-            <button class="btn btn-danger" (click)="deleteComment()" >Delete comment</button> 
+            <button class="btn btn-danger" value="{{comment.id}}"(click)="deleteComment( comment.id )" >Delete comment</button> 
         </div>
     </li>
 </ul>

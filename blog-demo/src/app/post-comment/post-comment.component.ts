@@ -15,28 +15,33 @@ export class PostCommentComponent implements OnInit {
   author: string;
   authorsComment: string;
   inAddCommentMode: boolean;
+  postId: number = 0;
 
   commentArray: Array<PostComment> = [];
   
   comment1 = new PostComment(
+    this.postId++,
     "Maćko z Bogdańca",
     new Date(),
     "some comment text"
     );
     
   comment2 = new PostComment(
+    this.postId++,
     "Rafał Czarnecki",
     new Date(),
     "some idiotic comment"
     );
   
   comment3 = new PostComment(
+    this.postId++,
     "Marek Matracki",
     new Date(),
     "ten to sie nie popisal"
     );
 
   comment4 = new PostComment(
+    this.postId++,
     "ROMAN EROTOMAN",
     new Date(),
     "kto nie pije ten nie żyje"
@@ -46,10 +51,11 @@ export class PostCommentComponent implements OnInit {
     this.commentArray.push(this.comment1);
     this.commentArray.push(this.comment2);
     this.commentArray.push(this.comment3);
+    this.commentArray.push(this.comment4);
   }
 
   setNewComment(): void { 
-    let newComment = new PostComment(this.author, new Date(), this.authorsComment);
+    let newComment = new PostComment(this.postId++, this.author, new Date(), this.authorsComment);
     this.commentArray.push(newComment);
     this.toggleAddCommentMode();
   }
@@ -66,9 +72,9 @@ export class PostCommentComponent implements OnInit {
 
   }
 
-  deleteComment(){
-    let commentToBeDeletedId = this.commentArray.find(object => object.author == "1");
-    console.log("Element do skasowania jest na indexie: " + commentToBeDeletedId);
-    //this.commentArray.splice(commentToBeDeletedId, 1);
+  deleteComment(commentId:number){
+    let certainPostComment = this.commentArray.find(object => object.id === commentId );
+    let indexOfOurArrayToBeDeleted = this.commentArray.indexOf(certainPostComment);
+    this.commentArray.splice(indexOfOurArrayToBeDeleted, 1);
   }
 }
